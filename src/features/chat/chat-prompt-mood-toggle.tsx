@@ -29,12 +29,12 @@ const ChatPromptMood = ({
     <Link
       href={url}
       className={clsx(
-        "px-2 h-6 text-sm flex items-center justify-center border capitalize transition ease-in-out duration-500",
+        "px-2 h-9 text-sm flex items-center justify-center border capitalize transition ease-in-out duration-500",
         {
           "rounded-r-lg": promptMood === "action",
           "rounded-l-lg": promptMood === "default",
-          "border-primary text-primary": isActive,
-          "border-black/30 text-black/30": !isActive,
+          "border-primary dark:border-white/30 text-primary dark:text-white": isActive,
+          "border-black/30 dark:border-border text-black/30 dark:text-white/50": !isActive,
           "border-l-0": promptMood === "action" && !isActive,
           "border-r-0": promptMood === "default" && !isActive,
         }

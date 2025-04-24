@@ -6,6 +6,7 @@ import { ChatBubble } from "./chat-bubble";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useQueryParams } from "@/hooks/use-query-params";
 import { ChatBubbleSkeleton } from "./chat-bubble-skeleton";
+import { ChatActionCommands } from "./chat-action-commands";
 
 export const ChatRoot = () => {
   const { currentQueries } = useQueryParams({
@@ -54,6 +55,7 @@ export const ChatRoot = () => {
         handleSubmit={handleSubmit}
         isLoading={isLoading}
       />
+      <ChatActionCommands isLoading={isLoading} handleInputChange={handleInputChange}/>
     </div>
   );
 };
