@@ -1,8 +1,8 @@
 import CopyAnything from "@/components/common/copy-anything";
 import clsx from "clsx";
-import ReactMarkdown from "react-markdown";
 import { ChatTryAgain } from "./chat-try-again";
 import { ChatShareResponse } from "./chat-share-response";
+import { MarkdownRenderer } from "./chat-bubble-markdown";
 
 interface ChatMessageProps {
   content: string;
@@ -21,7 +21,7 @@ export const ChatBubble = ({ content, role = "user" }: ChatMessageProps) => {
         })}
       >
         <div className="prose break-words">
-          <ReactMarkdown>{content}</ReactMarkdown>
+          {role === "user" ? content : <MarkdownRenderer content={content} />}
         </div>
       </div>
       <div

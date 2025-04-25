@@ -34,6 +34,8 @@ export const ChatRoot = () => {
       },
     });
 
+    console.log(messages)
+
   return (
     <div className="p-4 space-y-8">
       <ScrollArea>
